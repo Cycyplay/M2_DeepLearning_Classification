@@ -23,10 +23,9 @@ def main(argv):
         sys.exit()
 
     images = load_images_from_folder(folder)
-    output = np.array([])
-    for im in images:
-        np.append(output,im)
+    output = np.array(images)
 
+    print(len(output))
     np.save(os.path.join(folder,"numpyImageArray"),output)
 
 if __name__ == "__main__":
