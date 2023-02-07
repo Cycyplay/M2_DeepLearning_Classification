@@ -11,7 +11,6 @@ def load_images_from_folder(folder):
             images.append(img)
     return images
 
-
 def main(argv):
     inputfolder = ''
     outputfolder = 'cropped_images/'
@@ -29,7 +28,7 @@ def main(argv):
     images = [image[0:300,0:300] for image in images]
     #print(images)
     for i in range(len(images)):
-        images[i] = cv2.resize(images[i],(300,300),interpolation = cv2.INTER_AREA)
+        images[i] = cv2.resize(images[i],(64,64),interpolation = cv2.INTER_AREA)
         cv2.imwrite(os.path.join(outputfolder,str(i)+".jpg"),images[i])
 
     outputNumpyFusion = np.array([])
